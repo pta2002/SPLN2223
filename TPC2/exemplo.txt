@@ -1,0 +1,24 @@
+# 53: acomodación | Fisioloxía | f
+Nota - Designa o 'conxunto de moficiacións somáticas ou fìsiolóxicas que un organismo presenta como adaptación ao medio en que vive e que non se transmiten por medio da herdanza'
+es: acomodación
+en: accomodation
+pt: acomodação
+
+# 418: arteria cerebelar | Anatomía | m
+VAR - arteria cerebelosa
+es: arteria cerebelar
+es: arteria cerebelosa
+en: cerebellar artery
+pt: artéria cerebelar
+la: arteria cerebelli
+
+# 419: arteria cerebral anterior | Anatomía | f
+SIN - ACA (sg)
+es: ACA (sg)
+es: arteria cerebral anterior
+en: ACA (sg)
+en: anterior cerebral artery
+pt [br]: ACA (sg)
+pt [br]: artéria cerebral anterior
+la: arteria cerebbri anterior
+
