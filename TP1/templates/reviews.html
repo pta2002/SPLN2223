@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block headextra %}
+    <script src="/static/reviews.js" defer></script>
+{% endblock %}
+{% block title %}Reviews{% endblock %}
+
+{% block body %}
+<div class="header">
+    <h1>Reviews</h1>
+    <a class="add-button" href="/reviews/add">+ New review</a>
+</div>
+
+<div class="review-list">
+    {% for review in reviews %}
+    <div class="review">
+        <div class="review-header">
+            <div class="review-meta">
+                <a href="/reviews/{{review._id}}">#{{review._id}}</a>
+                &nbsp;|&nbsp;
+                <span class="scores" review-id="{{review._id}}"><a href="#">Calculate positivity</a></span>
+            </div>
+            <div class="review-buttons">
+                <a class="edit-button" href="/reviews/edit/{{review._id}}">✏️</a>
+                <a class="delete-button" href="/reviews/{{review._id}}?method=delete">X</a>
+            </div>
+        </div>
+        <p class="review-description">
+            {% autoescape false %}
+            {{ review.review | replace("\n", "<br/>") }}
+            {% endautoescape %}
+        </p>
+    </div>
+    {% endfor %}
+    <div class="pages">
+        {% if page > 1 %}
+        <a href="/reviews?page=1">{{ 1 }}</a>
+        {% if page > 2 %}
+        {% if page > 3 %}&hellip;{% endif %}
+        <a href="/reviews?page={{ page - 1 }}">{{ page - 1 }}</a>
+        {% endif %}
+        {% endif %}
+        <b>{{ page }}</b>
+        {% if page < pages %}
+        <a href="/reviews?page={{ page + 1 }}">{{ page + 1 }}</a>
+        {% if page < pages - 1 %}
+        {% if page < pages - 2 %}&hellip;{% endif %}
+        <a href="/reviews?page={{ pages }}">{{ pages }}</a>
+        {% endif %}
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

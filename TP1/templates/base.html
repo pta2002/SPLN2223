@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="/static/my.css" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {% block headextra %}{% endblock %}
+    </head>
+    <body>
+        <div class="wrapper">
+        {% block body %}{% endblock %}
+        </div>
+    </body>
+</html>

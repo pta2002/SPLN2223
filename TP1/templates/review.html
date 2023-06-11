@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}View review {{ review._id }}{% endblock %}
+{% block body %}
+<div class="header">
+    <h1>
+        Review | {% if score.compound < 0 %}👎{% else %}👍{% endif %}
+    </h1>
+</div>
+
+<div class="review">
+    <div class="review-header">
+        <div>#{{ review._id}}</div>
+        <div class="review-buttons">
+            <a class="edit-button" href="/reviews/edit/{{review._id}}">✏️</a>
+            <a class="delete-button" href="?method=delete">X</a>
+        </div>
+    </div>
+    <p class="review-description">
+        {% autoescape false %}
+            {{ review.review | replace("\n", "<br/>") }}
+        {% endautoescape %}
+    </p>
+    <h2>Scores</h2>
+    <table>
+        <tr><th>Type</th><th>Score</th></tr>
+        {% for k,v in score.items() %}
+        <tr><td>{{ k }}</td><td>{{ v }}</td></tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
