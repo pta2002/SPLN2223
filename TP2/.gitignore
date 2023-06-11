@@ -1,0 +1,9 @@
+
+# Devenv
+.devenv*
+devenv.local.nix
+.direnv*
+
+__pycache__/
+.venv
+dist
